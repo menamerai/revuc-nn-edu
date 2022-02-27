@@ -9,7 +9,7 @@ from random import randint
 import visualkeras
 import pandas as pd
 from streamlit_drawable_canvas import st_canvas
-import cv2
+from cv2 import resize
 from os.path import exists
 import numpy as np
 
@@ -195,7 +195,7 @@ try:
                 img = img[:, :, :-1]
                 img = img.mean(axis=2)
                 img = img / 255
-                img = cv2.resize(img, dsize=(28, 28))
+                img = resize(img, dsize=(28, 28))
                 predictions = loaded.predict(np.array([img, img]))
                 probability = tf.nn.softmax(predictions).numpy()[0]
                 st.image(img, width=128)
