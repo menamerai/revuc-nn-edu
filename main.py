@@ -70,11 +70,8 @@ model._layers = model._self_tracked_trackables
 
 visualkeras.graph_view(model, to_file="out.png")
 visualkeras.layered_view(model, to_file="layered.png", legend=True)
-st.image("out.png")
-im1, im2, im3 = st.columns(3)
-im1.write("")
-im2.image("layered.png")
-im3.write("")
+st.image("out.png", caption="Graph view of model")
+st.image("layered.png", width=512, caption="Layered view of model")
 
 model.compile(optimizer="adam", loss=keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=["accuracy"])
