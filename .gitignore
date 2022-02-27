@@ -128,3 +128,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Project specifics
+ex.png
+exp.png
+layered.png
+out.png
+model.h5
