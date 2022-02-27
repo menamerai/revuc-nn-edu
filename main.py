@@ -102,7 +102,7 @@ for i in range(middle_layers):
                                                        min_value=1, max_value=784, step=1, value=32,
                                                        key="lin{0}".format(i)))
     middle_layers_acts.append(st.sidebar.selectbox("Enter activation function for this layer:", ("Softmax", "ReLU", "Sigmoid", "Tanh"),
-                                                   key="act{0}".format(i)))
+                                                   key="act{0}".format(i)).lower())
 
 add_dropout = st.sidebar.checkbox("Add dropout layer?")
 st.sidebar.caption("""
